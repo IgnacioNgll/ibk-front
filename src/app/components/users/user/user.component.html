@@ -1,0 +1,58 @@
+<div class="card mt-5">
+  <div class="card-body">
+      <form #userForm="ngForm" (ngSubmit)="onSubmit(userForm)">
+          <!-- TO UPDATE -->
+          <input type="hidden" name="$key" #$key="ngModel" [(ngModel)]="userService.selectedUser.$key">
+
+          <div class="form-group">
+            <input 
+              type="text"
+              class="form-control"
+              name="name"
+              #name="ngModel"
+              [(ngModel)]="userService.selectedUser.name"
+              placeholder="Agregar Nombre"
+              >
+          </div>
+          <div class="form-group">
+              <input 
+                type="text"
+                class="form-control"
+                name="lastname"
+                #category="ngModel"
+                [(ngModel)]="userService.selectedUser.lastname"
+                placeholder="Agregar Apellido"
+                >
+            </div>
+          <div class="form-group">
+            <input 
+              type="number"
+              class="form-control"
+              name="age"
+              #location="ngModel"
+              [(ngModel)]="userService.selectedUser.age"
+              placeholder="Agregar Edad"
+              >
+          </div>
+          <div class="form-group">
+              <input 
+                id="fechaInicio"
+                type="date"
+                class="form-control"
+                name="birthdate"
+                #price="ngModel"
+                [(ngModel)]="userService.selectedUser.birthdate"
+                >
+          </div>
+
+          <div class="form-group">
+            <button class="btn btn-primary" type="submit">
+                <i class="fas fa-plus-circle"></i> Nuevo Cliente
+            </button>
+            <button class="btn btn-secondary" type="reset" (click)="resetForm(userForm)">
+                <i class="fas fa-sync-alt"></i> Reset
+            </button>
+          </div>
+        </form>
+  </div>
+</div>

@@ -1,0 +1,33 @@
+<div class="card">
+  <div class="card-body">
+    <h6 class="text-center">
+      Lista de Clientes
+    </h6>
+    <table class="table table-sm table-hover">
+      <tbody>
+        <tr >
+          <td>Nombre</td>
+          <td>Apellido</td>
+          <td>Edad</td>
+          <td>Fecha Nacimiento</td>
+          <td>Fecha probable de muerte en años</td>
+        </tr>
+        <tr *ngFor="let user of userList">
+          <td>{{user.name}}</td>
+          <td>{{user.lastname}}</td>
+          <td>{{user.age}}</td>
+          <td>{{user.birthdate}}</td>
+          <td>{{user.EdadPosibleMuerte}}</td>
+          <td>
+            <a class="btn btn-secondary text-white" (click)="onEdit(user)">
+                <i class="far fa-edit"></i>
+            </a>
+            <a class="btn btn-danger text-white" (click)="onDelete(user.$key)">
+                <i class="fas fa-trash-alt"></i>
+            </a>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
